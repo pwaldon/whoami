@@ -101,7 +101,7 @@ func whoami(w http.ResponseWriter, req *http.Request) {
 				ip = v.IP
 			}
 			fmt.Fprintln(w, "IP:", ip)
-			fmt.Println("IP " + ip)
+			fmt.Println("IP " + ip.String())
 		}
 	}
 	req.Write(w)
