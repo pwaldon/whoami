@@ -87,6 +87,7 @@ func whoami(w http.ResponseWriter, req *http.Request) {
 	}
 	hostname, _ := os.Hostname()
 	fmt.Fprintln(w, "Hostname:", hostname)
+	fmt.Println("Hostname " + hostname)
 	ifaces, _ := net.Interfaces()
 	for _, i := range ifaces {
 		addrs, _ := i.Addrs()
@@ -100,6 +101,7 @@ func whoami(w http.ResponseWriter, req *http.Request) {
 				ip = v.IP
 			}
 			fmt.Fprintln(w, "IP:", ip)
+			fmt.Println("IP " + ip)
 		}
 	}
 	req.Write(w)
